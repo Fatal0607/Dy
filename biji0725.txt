@@ -1,0 +1,49 @@
+ftp：//176.204.88.88/
+1、什么是git
+最先进的分部式版本控制系统
+2、git的诞生
+Linux（系统）  Linus（人）
+3、分布式和集中式
+集中式类似传统服务器和客户端
+分布式每一个人都有一个版本一个服务器
+4、git的安装
+下一步
+设置名字邮箱
+$ git config —global user.name/email “xxx”
+5、创建版本库
+创建一个空目录，作为版本库
+执行初始化命令：$ git init
+6、git的管理
+文本，代码， 网页 .txt .c .Java 
+7、把文件添加到版本库
+创建一个文件
+查看仓库状态：$ git status
+把文件添加到版本库：$ git add 文件名
+再次查看：$ git status
+把文件提交给版本库：$ git commit -m “变动信息”
+查看文件每个版本：$ git log
+8、时光穿梭
+降档：$ git reset —hard 版本（HEAD^）
+HEAD：代表当前版本
+head^：上个版本
+head^^：上上版本
+head～100:上100个版本
+撤销：$ git reflog：查看所有版本信息
+$ git reset —hard 版本号
+9、修改撤销
+$ git checkout — 文件名
+运用场景：未提交之前撤销修改git checkout
+                    提交到暂存区需清除git reset HEAD 文件名
+                    入库git reset —hard HEAD^
+10、删除文件
+不想删：git checkout — 文件名
+真删：删除文件，git add 文件名，提交：git commit -m “变动信息”
+11、Github
+将本机的SSH添加到github
+在本地创建SSH key
+$ ssh-keygen -t rsa -C “903030702@qq.com”
+找到地址复制.pub到github
+测试是否连接成功：ssh -T git@github.com
+本地仓上传github：
+远程仓库连接：$ git remote add origin git@github.com：Dyanion/Dy.git
+本地推送到远程：$ git push -u origin master
